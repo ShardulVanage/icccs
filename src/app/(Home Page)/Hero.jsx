@@ -110,7 +110,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="absolute -bottom-20 -left-6 rounded-2xl bg-primary p-6 text-primary-foreground "
+                className="absolute -bottom-20 -left-6 rounded-2xl  p-6 text-primary-foreground "
               >
                 <MorphingCard
                   width="260px"
