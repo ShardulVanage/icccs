@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "How can I present my research or project at the conference?",
     answer:
-      "We welcome submissions for oral and poster presentations. Please visit our 'Call for Papers' page for detailed information on submission guidelines, deadlines, and the review process. We particularly encourage presentations on innovative solutions and case studies in climate action and sustainability.",
+      "We welcome submissions for oral and poster presentations. Please visit our Call for Papers page for detailed information on submission guidelines, deadlines, and the review process. We particularly encourage presentations on innovative solutions and case studies in climate action and sustainability.",
   },
   {
     question:
@@ -47,7 +47,8 @@ export default function FAQ() {
               Frequently Asked Questions
             </h2>
             <p className="mt-4 text-lg leading-7  dark:text-blue-200">
-              Can't find the answer you're looking for? Reach out to our{" "}
+              Can&apos;t find the answer you&apos;re looking for? Reach out to
+              our{" "}
               <a
                 href="#contact"
                 className="font-semibold text-blue-800 hover:text-blue-700 underline"
