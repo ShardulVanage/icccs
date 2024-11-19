@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
@@ -39,7 +40,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="bg-gradient-to-tr from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900">
+    <div className="bg-whitehi">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
@@ -58,7 +59,7 @@ export default function FAQ() {
               .
             </p>
             <Image
-              src="https://illustrations.popsy.co/blue/question-mark.svg"
+              src="https://illustrations.popsy.co/white/question-mark.svg"
               alt="Climate Conference Illustration"
               width={300}
               height={300}
@@ -75,7 +76,7 @@ export default function FAQ() {
                   transition={{ delay: index * 0.1 }}
                   className="border-b border-blue-200 dark:border-blue-700 pb-6"
                 >
-                  <dt className="text-lg font-semibold leading-7 text-blue-800 dark:text-blue-200">
+                  <dt className="text-lg font-semibold leading-7 text-blue-950 dark:text-blue-200">
                     <button
                       onClick={() =>
                         setOpenIndex(openIndex === index ? null : index)
@@ -109,12 +110,7 @@ export default function FAQ() {
           </div>
         </div>
         <div className="flex justify-center items-center mt-10">
-          <a
-            href="#"
-            className="rounded-md bg-blue-600 px-12 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors duration-200"
-          >
-            Download Conference Schedule
-          </a>
+          <Button size="lg">Contact Us</Button>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ export default function AboutCompany() {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="py-16 px-4 bg-gradient-to-br from-blue-50 to-blue-50 dark:from-blue-900 dark:to-blue-900 "
+      className="py-16 px-4 bg-white"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">

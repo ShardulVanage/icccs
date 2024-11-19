@@ -1,128 +1,84 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { motion, useAnimation, useInView } from 'framer-motion'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { CalendarDays, MapPin, Users, Lightbulb, Globe, Award } from 'lucide-react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function ConferenceAboutSection() {
-  const controls = useAnimation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible')
-    }
-  }, [controls, isInView])
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.5, 
-        ease: 'easeOut',
-        staggerChildren: 0.1 
-      } 
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-  }
-
-  const conferenceFeatures = [
-    { icon: CalendarDays, text: "3-day thought-provoking event" },
-    { icon: MapPin, text: "At the centre of (Add location)" },
-    { icon: Users, text: "Connect with 500+ leaders in the industry" },
-    { icon: Lightbulb, text: "Over 20+ workshops on emerging trends" },
-    { icon: Globe, text: "Speakers from more than 30 countries" },
-    { icon: Award, text: "Annual Tourism Innovation Awards" },
-  ]
-
+export default function AboutUs() {
   return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={containerVariants}
-      className="py-16 px-4 bg-gradient-to-br from-blue-50 to-blue-50 dark:from-blue-900 dark:to-blue-900"
-    >
-      <div className="max-w-6xl mx-auto">
-        <motion.div variants={itemVariants} className="text-center mb-12">
-          <Badge variant="outline" className="mb-4 text-lg px-4 py-1">About the Conference</Badge>
-          <h2 className="text-4xl font-bold text-primary mb-4">International Conference on Tourism Management and Hospitality</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-Connecting global leaders, innovators, and experts to redefine the future of tourism and hospitality.
-          </p>
+    <section className="py-16 bg-slate-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">About the World Forum on Climate Change and Environmental Sustainability</h2>
         </motion.div>
- <motion.div variants={itemVariants} className="mt-12 text-center pb-12">
-          <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20 inline-block">
-            <CardHeader>
-                <CardTitle className="text-2xl font-bold text-primary">ICTMH</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground px-12 text-justify">
-                 The International Conference on Tourism Management and Hospitality is a premier global event that brings together thought leaders, industry professionals, researchers, and innovators from around the world. Over three days, participants will explore the latest trends, challenges, and opportunities within the tourism and hospitality sectors, with a focus on sustainability, digital transformation, and the future of travel. This conference serves as a unique platform to exchange ideas, foster collaborations, and drive actionable solutions for the industrys most pressing issues.
-
-                </p>
-                <p className="text-muted-foreground px-12 text-justify mt-2">
-                 Attendees will have the chance to engage in insightful discussions, attend workshops, and network with key influencers shaping the future of tourism and hospitality. Whether you are a seasoned professional, an academic, or a newcomer to the industry, this conference will provide valuable knowledge and connections that can help you navigate and lead in the evolving landscape of tourism and hospitality.
-                </p>
-              </CardContent>
-          </Card>
-          
-        </motion.div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div variants={itemVariants}>
-            <Card className="h-full bg-white/50 backdrop-blur-sm border-2 border-primary/20">
+        
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-primary"> Mission</CardTitle>
+                <CardTitle>Our Mission</CardTitle>
+                <CardDescription>Driving global action for a sustainable future</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-Fostering innovation and collaboration, with a focus on sustainable practices in the tourism and hospitality industry through knowledge sharing, networking, and showcasing the most up-to-date research and technologies.
+                <p className="text-gray-600 mb-4">
+                  The World Forum on Climate Change and Environmental Sustainability brings together leaders, scientists, activists, and innovators from around the globe to address the most pressing environmental challenges of our time.
+                </p>
+                <p className="text-gray-600">
+                  Our goal is to foster collaboration, share cutting-edge research, and develop actionable strategies to combat climate change and promote sustainable practices across all sectors of society.
                 </p>
               </CardContent>
             </Card>
           </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <Card className="h-full bg-white/50 backdrop-blur-sm border-2 border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-primary">Conference Highlights</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="grid grid-cols-2 gap-4">
-                  {conferenceFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <feature.icon className="h-5 w-5 text-primary mr-2" />
-                      <span className="text-sm text-muted-foreground">{feature.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative h-64 md:h-full"
+          >
+            <Image
+              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726482086/uli2ntgqkw22vfigdtkt.png"
+              alt="Animated illustration of climate change and sustainability concepts"
+              layout="fill"
+              objectFit="contain"
+              className="rounded-lg"
+            />
           </motion.div>
         </div>
-
-        <motion.div variants={itemVariants} className="mt-12 text-center">
-          <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20 inline-block">
-            <CardContent className="p-6">
-              <CardDescription className="text-lg font-medium text-primary mb-2">
-                Be a part of redefining the future of tourism and hospitality.
-              </CardDescription>
-              <p className="text-muted-foreground">
-                September 15-17, 2024 • New York City, USA
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-12"
+        >
+          <Card>
+            <CardHeader>
+              <CardTitle>Join Us in Making a Difference</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">
+                By participating in our forum, you'll have the opportunity to:
               </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>Engage with world-renowned experts and thought leaders</li>
+                <li>Explore innovative solutions to environmental challenges</li>
+                <li>Network with like-minded individuals and organizations</li>
+                <li>Contribute to shaping global environmental policies</li>
+                <li>Learn about the latest advancements in sustainable technologies</li>
+              </ul>
             </CardContent>
           </Card>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   )
 }

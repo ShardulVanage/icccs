@@ -96,14 +96,14 @@ export default function ContactUs() {
             transition={{ delay: 0.2 }}
           >
             <Image
-              src="https://illustrations.popsy.co/amber/telephone-call.svg"
+              src="https://illustrations.popsy.co/blue/telephone-call.svg"
               alt="Contact Us"
               width={400}
               height={300}
               className=""
             />
             <div>
-              <h2 className="text-3xl font-semibold  mb-4 underline underline-offset-4 decoration-orange-500">
+              <h2 className="text-3xl font-semibold  mb-4 underline underline-offset-4 decoration-blue-500">
                 Get in Touch
               </h2>
               <p className="text-muted-foreground mb-4">

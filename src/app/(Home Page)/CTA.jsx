@@ -75,66 +75,8 @@ export default function ConferenceCTASections() {
 
   return (
     <>
-      <section
-        ref={ref}
-        className="w-full py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900"
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="text-center mb-10"
-          >
-            <motion.h2
-              variants={itemVariants}
-              className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-600 dark:text-blue-300"
-            >
-              Conference Highlights
-            </motion.h2>
-            <motion.p
-              variants={itemVariants}
-              className="mt-4 text-xl text-blue-600 dark:text-blue-200"
-            >
-              Explore key aspects of our Climate Change and Sustainability
-              Conference
-            </motion.p>
-          </motion.div>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {ctaCards.map((card, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="h-full bg-white dark:bg-blue-800 hover:shadow-lg transition-shadow duration-300 border-none">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
-                    {card.icon}
-                    <h3 className="text-xl font-bold mb-2 text-blue-600 dark:text-blue-300">
-                      {card.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-blue-100 mb-4">
-                      {card.description}
-                    </p>
-                    <Button
-                      asChild
-                      className="mt-auto bg-blue-600 hover:bg-blue-700 text-white"
-                    >
-                      <a href={card.link}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="   md:py-24 bg-gradient-to-tr from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900 ">
-        <div className="container relative  md:px-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 rounded-xl bg-blue-600 dark:bg-blue-800 drop-shadow-2xl">
+      <section className="  py-24 bg-white ">
+        <div className="container relative  md:px-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 rounded-3xl bg-gradient-to-tr from-violet-500 to-orange-300 drop-shadow-2xl">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -145,10 +87,10 @@ export default function ConferenceCTASections() {
               variants={itemVariants}
               className="mb-8 lg:mb-0 lg:mr-8 text-center lg:text-left"
             >
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white mb-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white mb-4 drop-shadow-md">
                 Be Part of the Climate Solution
               </h2>
-              <p className="text-xl text-blue-100 max-w-2xl">
+              <p className="text-xl text-slate-50 max-w-2xl drop-shadow">
                 Join leaders, innovators, and changemakers at the forefront of
                 climate action and sustainability.
               </p>
@@ -179,6 +121,56 @@ export default function ConferenceCTASections() {
               "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] "
             )}
           />
+        </div>
+      </section>
+      <section ref={ref} className="w-full py-8 md:py-12 bg-white">
+        <div className="container mx-auto max-w-7xl px-4 md:px-6">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="text-center mb-10"
+          >
+            <motion.h2
+              variants={itemVariants}
+              className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl underline-offset-2 underline decoration-blue-400"
+            >
+              Conference Highlights
+            </motion.h2>
+            <motion.p variants={itemVariants} className="mt-4 text-xl ">
+              Explore key aspects of our Climate Change and Sustainability
+              Conference
+            </motion.p>
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            {ctaCards.map((card, index) => (
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="h-full bg-slate-50 dark:bg-blue-800 hover:shadow-lg transition-shadow duration-300 border-none">
+                  <CardContent className="p-6 flex flex-col items-center text-center">
+                    {card.icon}
+                    <h3 className="text-xl font-bold mb-2 ">{card.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-blue-100 mb-4">
+                      {card.description}
+                    </p>
+                    <Button
+                      asChild
+                      size="sm"
+                      className="mt-auto bg-blue-400 hover:bg-blue-500/90 text-white"
+                    >
+                      <a href={card.link}>
+                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
     </>

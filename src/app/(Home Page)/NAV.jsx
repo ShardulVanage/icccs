@@ -151,8 +151,8 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b border-blue-200 dark:border-blue-800">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+    <div className="border-b border-blue-200 dark:border-blue-800 ">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 ">
         <div className="flex items-center">
           <Link href="/" className="text-2xl font-bold">
             <Image
@@ -163,7 +163,7 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4 relative z-20 ">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>

@@ -37,12 +37,14 @@ const logos = [
 
 export default function CoOrganizationLogos() {
   return (
-    <section className="w-full py-8 bg-gradient-to-tr from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-4xl md:ml-24 text-center sm:text-left mb-8 underline underline-offset-2 decoration-blue-500 dark:decoration-yellow-50">
-          Our Co-organizations
-        </h2>
-        <CoOrganizationLogosClient logos={logos} />
+    <section className="w-full py-8 bg-white">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-4xl md:ml-24  sm:text-left mb-8 underline underline-offset-2 decoration-blue-500 dark:decoration-yellow-50">
+            Our Co-organizations
+          </h2>
+          <CoOrganizationLogosClient logos={logos} />
+        </div>
       </div>
     </section>
   );

@@ -1,86 +1,81 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-export default function AboutSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
-
+export default function AboutUs() {
   return (
-    <section
-      ref={ref}
-      className="w-full py-12 md:py-12 lg:py-24 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900"
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center"
-        >
-          <motion.div variants={itemVariants} className="flex justify-center">
-            <div className="relative w-full max-w-[500px] aspect-square overflow-hidden rounded-lg">
-              <Image
-                src="https://illustrations.popsy.co/blue/podcast-show.svg"
-                alt="Climate Change Conference Image"
-                layout="fill"
-                objectFit="cover"
-                className="object-center"
-              />
-            </div>
-          </motion.div>
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col justify-center space-y-4"
-          >
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-4xl  text-blue-500 drop-shadow-sm">
-              About Conference
+    <section className="bg-white py-16">
+      <div className="container max-w-7xl mx-auto px-4">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-blue-600">About Us</h3>
+            <h2 className="text-4xl font-bold leading-tight tracking-tighter md:text-5xl">
+              Our Mission is Global Climate Action
             </h2>
-            <p className="text-muted-foreground">
-              Join us for a groundbreaking gathering of environmental experts,
-              policymakers, and innovators at the forefront of climate action.
-              Our conference offers a unique platform for sharing cutting-edge
-              research, sustainable solutions, and collaborative strategies to
-              address the urgent challenges of climate change and build a more
-              sustainable future for our planet.
+            <p className="text-gray-600">
+              The International Conference on Climate Change & Sustainability
+              was founded by Dr. Emma Rhodes, a renowned climate scientist, and
+              Mark Chen, a sustainability advocate. Their shared vision was to
+              create a global platform for experts, policymakers, and innovators
+              to address the urgent challenges of climate change. United by
+              their belief in the power of collaborative action, they embarked
+              on a journey to build this conference. With relentless dedication,
+              they gathered a team of experts and launched this innovative
+              event,
             </p>
-            <motion.div variants={itemVariants}>
-              <Button
-                asChild
-                className="bg-blue-600 text-white hover:bg-blue-700 hover:scale-105"
-              >
-                <a href="/about-conference">Learn More</a>
-              </Button>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            <Button size="sm" className=" italic">
+              <Link href="/about-conference">Know More</Link>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <Card>
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <span className="text-3xl font-bold text-blue-400">5</span>
+                  <span className="text-sm text-gray-600 text-center">
+                    Years Running
+                  </span>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <span className="text-3xl font-bold text-blue-400">50+</span>
+                  <span className="text-sm text-gray-600 text-center">
+                    Expert Speakers
+                  </span>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <span className="text-3xl font-bold text-blue-400">
+                    1000+
+                  </span>
+                  <span className="text-sm text-gray-600 text-center">
+                    Attendees
+                  </span>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <span className="text-3xl font-bold text-blue-400">20+</span>
+                  <span className="text-sm text-gray-600">
+                    Countries Represented
+                  </span>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          <div className="relative h-[400px] overflow-hidden rounded-lg md:h-full">
+            <Image
+              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731934180/pttjzj2b7uebhimhhfbi.svg"
+              alt="Conference founders discussing climate action"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg opacity-90"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
