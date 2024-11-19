@@ -79,8 +79,8 @@ export default function VenuePage() {
                   The Global Conference Center is a state-of-the-art facility
                   designed to host international events focused on environmental
                   sustainability and climate change. With its eco-friendly
-                  architecture and advanced technology, it's the perfect setting
-                  for our World Forum.
+                  architecture and advanced technology, it&apos;s the perfect
+                  setting for our World Forum.
                 </p>
                 <Badge className="bg-blue-100 text-blue-700">
                   Eco-Certified Venue

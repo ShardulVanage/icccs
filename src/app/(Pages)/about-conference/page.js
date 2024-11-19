@@ -66,7 +66,7 @@ export default function AboutUs() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-4">
-                By participating in our forum, you'll have the opportunity to:
+                By participating in our forum, you&apos;ll have the opportunity to:
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>Engage with world-renowned experts and thought leaders</li>
